@@ -1,19 +1,13 @@
 # Regression with residuals
 
-## Purpose
-
 ```
-This guide explains how to apply the *regression-with-residuals* approach to control for a covariate (such as body weight) that may be **collinear** with other predictors in a mixed-effects model.  
-This method is useful when you want to assess the effect of an experimental factor (e.g., ovariectomy) on an outcome (e.g., brain structure) while accounting for confounding variables that are strongly correlated with both the predictor and outcome.
+This guide explains how to apply the regression-with-residuals approach to control for a covariate (such as body weight) that may be collinear with other predictors in a mixed-effects model. This method is useful when you want to assess the effect of an experimental factor (e.g., surgery, disease state) on an outcome (e.g., brain structure) while accounting for confounding variables that are strongly correlated with both the predictor and outcome.
+
+Including certain covariates directly in a model (like body weight) can introduce collinearity, especially when those covariates are affected by the experimental condition.  
+The regression-with-residuals approach removes the shared variance between the covariate and the predictor, allowing you to include only the independent portion of the covariate in your model.
 
 Reference: [Zhou & Wodtke, 2019](https://www.cambridge.org/core/journals/political-analysis/article/regressionwithresiduals-method-for-estimating-controlled-direct-effects/EA081ACCE12BD0C5BA9A59C414F6D411)
 
----
-
-Including certain covariates directly in a model (like body weight) can introduce **collinearity**, especially when those covariates are affected by the experimental condition.  
-The regression-with-residuals approach removes the shared variance between the covariate and the predictor, allowing you to include only the **independent portion** of the covariate in your model.
-
----
 
 ## Example: Controlling for body weight in a brain structure model
 
