@@ -3,7 +3,7 @@
 ## Purpose
 
 ```
-This guide explains how to apply the **regression-with-residuals** approach to control for a covariate (such as body weight) that may be **collinear** with other predictors in a mixed-effects model.  
+This guide explains how to apply the *regression-with-residuals* approach to control for a covariate (such as body weight) that may be **collinear** with other predictors in a mixed-effects model.  
 This method is useful when you want to assess the effect of an experimental factor (e.g., ovariectomy) on an outcome (e.g., brain structure) while accounting for confounding variables that are strongly correlated with both the predictor and outcome.
 
 Reference: [Zhou & Wodtke, 2019](https://www.cambridge.org/core/journals/political-analysis/article/regressionwithresiduals-method-for-estimating-controlled-direct-effects/EA081ACCE12BD0C5BA9A59C414F6D411)
