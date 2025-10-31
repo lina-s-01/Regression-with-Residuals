@@ -21,7 +21,7 @@ model1 <- mincLmer(Jacobians ~ group * poly(age, degree = 2) + (1|ID))
 ```
 
 This model is a univariate voxel-wise nonlinear mixed-effects model which captures neuroanatomical change as a function of ```group``` and ```age```. 
-```Jacobians```: Jacobian determinants; voxel-wise measure of brain structural change. 
+```Jacobians```: Jacobian determinants; voxel-wise measure of structural brain change. 
 ```group``` is a categorical variable (ovariectomized or control).
 ```age``` is a continuous variable modelled quadratically.
 ```(1|ID)```: random effect; subject-level intercept.
@@ -43,10 +43,10 @@ However, including weight directly as a covariate introduces collinearity becaus
 To tackle this, we can use the residuals of weight that are extracted from the weight model to isolate the variance in weight not explained by age-related growth, intervention group or repeated measures.
 
 ```r
-weight_model <- Lmer(Weight ~ group * age + (1|ID))
+weight_model <- Lmer(weight ~ group * age + (1|ID))
 ```
 
-This model explains how much of the variance in weight can be attributed to group, age, and repeated measures. The remaining unexplained variance (residuals) represents individual differences in weight independent of these predictors.
+The remaining unexplained variance (residuals) represents individual differences in weight independent of these predictors.
 
 Now we can extract the residuals of the weight model and append them back to the main dataset (assuming it is called data). 
 
@@ -65,6 +65,6 @@ brain_res_model <- mincLmer(Jacobians ~ group * poly(age, degree = 2) + res_weig
 
 This final model retains the same structure as the original but replaces raw weight with its residuals, thereby reducing collinearity and enhancing interpretability.
 
-! [Here, you can see the longitudinal effects of ovariectomy on brain structure while controlling for individual differences in weight] (LINK NEEDED)
+! [Here, you can see the true longitudinal effects of ovariectomy on brain structure while controlling for individual differences in weight] (LINK NEEDED)
 
-
+This approach can be adapted to different datasets and model structures, whether linear or non-linear. 
