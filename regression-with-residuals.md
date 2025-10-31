@@ -21,13 +21,12 @@ model1 <- mincLmer(Jacobians ~ group * poly(age, degree = 2) + (1|ID))
 ```
 
 This model is a univariate voxel-wise nonlinear mixed-effects model which captures neuroanatomical change as a function of ```group``` and ```age```. 
-```Jacobians```: Jacobian determinants; voxel-wise measure of brain structural change 
-```group``` is a categorical variable (ovariectomized or control)
-```age``` is a continuous variable modelled quadratically
-```(1|ID)```: random effect; subject-level intercept
+```Jacobians```: Jacobian determinants; voxel-wise measure of brain structural change. 
+```group``` is a categorical variable (ovariectomized or control).
+```age``` is a continuous variable modelled quadratically.
+```(1|ID)```: random effect; subject-level intercept.
 
-![Here, you can see the longitudinal effects of ovariectomy on brain structure without controlling for weight] (images
-/OVX_brain_plot_no_weight_correction.png)
+![Here, you can see the longitudinal effects of ovariectomy on brain structure without controlling for weight] (I DON'T KNOW WHICH LINK TO INSERT)
 
 ### Step 2: Controlling for body weight
 
@@ -64,7 +63,8 @@ Use the residualized weight variable as a covariate in your brain model:
 brain_res_model <- mincLmer(Jacobians ~ group * poly(age, degree = 2) + res_weight + (1|ID))
 ```
 
-This final model maintains the same structure as the original but replaces raw weight with its residuals, reducing collinearity and improving interpretability.
+This final model retains the same structure as the original but replaces raw weight with its residuals, thereby reducing collinearity and enhancing interpretability.
 
+! [Here, you can see the longitudinal effects of ovariectomy on brain structure while controlling for individual differences in weight] (LINK NEEDED)
 
 
