@@ -26,7 +26,9 @@ This model is a univariate voxel-wise nonlinear mixed-effects model which captur
 ```age``` is a continuous variable modelled quadratically.
 ```(1|ID)```: random effect; subject-level intercept.
 
-![Here, you can see the longitudinal effects of ovariectomy on brain structure without controlling for weight] (I DON'T KNOW WHICH LINK TO INSERT)
+<img width="705" height="606" alt="image" src="https://github.com/user-attachments/assets/e1ee1f0c-cc5b-4131-b59b-c876ae1a7e7f" />
+
+Here, you can see the longitudinal effects of ovariectomy on brain structure without controlling for weight
 
 ### Step 2: Controlling for body weight
 
